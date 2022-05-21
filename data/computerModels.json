@@ -1,0 +1,351 @@
+{
+  "computerModels": [
+    {
+      "title": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
+      "description": [
+        "Designed on Intel® Evo™ vPro® platform",
+        "Larger battery for more time unplugged ",
+        "Impressive 16:10 display ",
+        "14 redesigned 6th generation, 2-in-1 business laptop "
+      ],
+      "subheader": "Lenovo",
+      "alt": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
+      "imgpath": "/ComputerPics/lenovo.png",
+      "price": "1500",
+      "lastPrice": "2400",
+      "rating": 5,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "ThinkPad T15 Gen 2 (15” Intel) Laptop",
+      "subheader": "Lenovo",
+      "alt": "ThinkPad T15 Gen 2 (15” Intel) Laptop",
+      "imgpath": "/ComputerPics/lenovo1.png",
+      "rating": 4,
+      "price": "1100",
+      "lastPrice": "0",
+      "description": [
+        "15 business pc with powerful Intel® Core™ processing",
+        "Optional NVIDIA® graphics",
+        "Choose from many display resolutions for best-in-class visuals ",
+        "Optional time-saving features like: fingerprint reader, Modern Standby and Wake on Voice "
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ThinkPad X12 Detachable (12, Intel) Tablet",
+      "subheader": "Lenovo",
+      "alt": "ThinkPad X12 Detachable (12, Intel) Tablet",
+      "imgpath": "/ComputerPics/lenovo2.png",
+      "rating": 4,
+      "price": "1490",
+      "lastPrice": "0",
+      "description": [
+        "A powerful 12.3 windows detachable tablet",
+        "Runs up to the latest Intel® processors",
+        "Lightweight, alternative to your business laptop",
+        "Use a pen to sketch, take notes, and sign documents"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Yoga 9i (14”) 2 in 1 laptop",
+      "subheader": "Lenovo",
+      "alt": "Yoga 9i (14”) 2 in 1 laptop",
+      "imgpath": "/ComputerPics/lenovo3.png",
+      "rating": 4,
+      "price": "1099",
+      "lastPrice": "0",
+      "description": [
+        "Designed on Intel® Evo™ platform that provides enhanced performance & responsiveness",
+        "14 inch display, up to UHD optimized with Dolby Vision™",
+        "Contemporary 2 in 1 design includes garaged pen & rotating soundbar ",
+        "ThiPlay over 100 high-quality PC games with your new Yoga laptop and 3 free months of Xbox Game Pass "
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Yoga 7i (15”) 2 in 1 Laptop",
+      "subheader": "Lenovo",
+      "alt": "Yoga 7i (15”) 2 in 1 Laptop",
+      "imgpath": "/ComputerPics/lenovo4.png",
+      "rating": 4,
+      "price": "804",
+      "lastPrice": "0",
+      "description": [
+        "Designed on Intel® Evo™ platform that provides enhanced performance & responsiveness ",
+        "15.6 inch FHD display with Dolby Vision™ and Intel® Iris® Xe graphics, your visuals will pop",
+        "Incredible battery life, thanks to Intelligent Cooling optimization",
+        "ThiPlay over 100 high-quality PC games with your new Yoga laptop and 3 free months of Xbox Game Pass "
+      ]
+    },
+    {
+      "title": "OMEN by HP Laptop 16-c0035nr",
+      "description": [
+        "Windows 11 Home",
+        "AMD Ryzen™ 7 processor",
+        "NVIDIA® GeForce RTX™ 3070 Laptop GPU (8 GB GDDR6 dedicated)",
+        "16 GB memory; 512 GB SSD storage "
+      ],
+      "subheader": "HP",
+      "alt": "OMEN by HP Laptop 16-c0035nr",
+      "imgpath": "/ComputerPics/hp.png",
+      "price": "1440",
+      "lastPrice": "2400",
+      "rating": 4,
+      "id": 6
+    },
+    {
+      "title": "HP ENVY x360 Convertible Laptop - 15z-eu000 touch",
+      "description": [
+        "Windows 11 Home",
+        "AMD Ryzen™ 5 5500U (up to 4.0 GHz, 8 MB L3 cache, 6 cores, 12 thread) + AMD Radeon™ Graphics",
+        "8 GB DDR4-3200 SDRAM (2 X 4 GB)",
+        "256 GB PCIe® NVMe™ M.2 SSD "
+      ],
+      "subheader": "HP",
+      "alt": "HP ENVY x360 Convertible Laptop - 15z-eu000 touch",
+      "imgpath": "/ComputerPics/hp1.png",
+      "price": "749",
+      "lastPrice": "0",
+      "rating": 3.5,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "title": "HP Laptop - 17z-cp000 touch optional",
+      "subheader": "HP",
+      "alt": "HP Laptop - 17z-cp000 touch optional",
+      "imgpath": "/ComputerPics/hp2.png",
+      "rating": 4,
+      "price": "1444",
+      "lastPrice": "0",
+      "description": [
+        "Windows 11 Home",
+        "AMD Athlon™ Gold 3150U (2.4 GHz, up to 3.3 GHz, 4 MB L3 cache, 2 cores) + AMD Radeon™ Graphics ",
+        "8 GB DDR4-2400 SDRAM (1 x 8 GB)",
+        "128 GB PCIe® NVMe™ TLC M.2 SSD "
+      ]
+    },
+    {
+      "id": 9,
+      "title": "HP Chromebook 11a 11a-na0010nr",
+      "subheader": "HP",
+      "alt": "HP Chromebook 11a 11a-na0010nr",
+      "imgpath": "/ComputerPics/hp3.png",
+      "rating": 4,
+      "price": "179",
+      "lastPrice": "0",
+      "description": [
+        "MediaTek processor",
+        "4 GB memory; 32 GB eMMC storage",
+        "11.6 diagonal HD display"
+      ]
+    },
+    {
+      "title": "HP Chromebook x2 11-da0047nr ",
+      "description": [
+        "Chrome OS™",
+        "Qualcomm® Snapdragon™ processor",
+        "Qualcomm® Adreno™ 618 GPU",
+        "8 GB memory; 128 GB eMMC storage"
+      ],
+      "subheader": "HP",
+      "alt": "HP Chromebook x2 11-da0047nr ",
+      "imgpath": "/ComputerPics/hp4.png",
+      "price": "459",
+      "lastPrice": "0",
+      "rating": 4,
+      "id": 10
+    },
+    {
+      "id": 11,
+      "title": "G15 Gaming Laptop",
+      "subheader": "Dell",
+      "alt": "G15 Gaming Laptop",
+      "imgpath": "/ComputerPics/dell.png",
+      "rating": 4,
+      "price": "799",
+      "lastPrice": "0",
+      "description": [
+        "11th Generation Intel Core i5-11260H (12MB Cache, up to 4.4 GHz, 6 cores) ",
+        "NVIDIA® GeForce RTX™ 3050 Ti, 4 GB GDDR6",
+        "15.6, FHD 1920x1080, 120Hz, Non-Touch, AG, WVA, LED-Backlit, 250 nit, Narrow Border",
+        "8 GB, 1 x 8 GB, DDR4, 3200 MHz"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "XPS 15 Laptop",
+      "subheader": "Dell",
+      "alt": "XPS 15 Laptop ",
+      "imgpath": "/ComputerPics/dell1.png",
+      "rating": 4,
+      "price": "1790",
+      "lastPrice": "0",
+      "description": [
+        "11th Gen Intel® Core™ i7-11800H (24 MB cache, 8 cores, 16 threads, up to 4.60 GHz Turbo)",
+        "Windows 11 Home, English ",
+        "NVIDIA® GeForce RTX™ 3050, 4 GB GDDR6, 40 W",
+        "16 GB, 2 x 8 GB, DDR4, 3200 MHz"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "XPS 13 Laptop",
+      "subheader": "Dell",
+      "alt": "XPS 13 Laptop",
+      "imgpath": "/ComputerPics/dell2.png",
+      "rating": 4,
+      "price": "1169",
+      "lastPrice": "0",
+      "description": [
+        "11th Gen Intel® Core™ i3-1115G4 (6 MB cache, 2 cores, 4 threads, up to 4.10 GHz Turbo)",
+        "Windows 11 Home, English",
+        "Intel® UHD Graphics",
+        "8GB 4267MHz LPDDR4x Memory Onboard"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Inspiron 15 3000 Laptop",
+      "subheader": "Dell",
+      "alt": "Inspiron 15 3000 Laptop",
+      "imgpath": "/ComputerPics/dell3.png",
+      "rating": 4,
+      "price": "399",
+      "lastPrice": "0",
+      "description": [
+        "10th Gen Intel® Core™ i5-1035G1 (6 MB cache, 4 cores, 8 threads, up to 3.60 GHz Turbo)",
+        "Intel® UHD Graphics",
+        "15.6, FHD 1920x1080, 60Hz, Non-Touch, AG, WVA, LED-Backlit, Narrow Border",
+        "8 GB, 1 x 8 GB, DDR4, 2666 MHz "
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Apple MacBook Pro 14-inch with M1 Pro chip 512GB SSD (Space Grey) [2021]",
+      "subheader": "Apple",
+      "alt": "Apple MacBook Pro 14-inch with M1 Pro chip 512GB SSD (Space Grey) [2021] ",
+      "imgpath": "/ComputerPics/apple.png",
+      "rating": 4,
+      "price": "2999",
+      "lastPrice": "0",
+      "description": [
+        "Apple M1 Pro chip for a massive leap in CPU, GPU and machine learning performance ",
+        "8-core CPU delivers up to 3.7x faster performance to fly through pro workflows quicker than ever",
+        "14-core GPU with up to 13x faster performance for graphics-intensive apps and games3",
+        "Longer battery life, up to 17 hours"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Apple MacBook Pro 14-inch with M1 Pro chip 512GB SSD (Silver) [2021] ",
+      "subheader": "Apple",
+      "alt": "Apple MacBook Pro 14-inch with M1 Pro chip 512GB SSD (Silver) [2021]",
+      "imgpath": "/ComputerPics/apple1.png",
+      "rating": 4,
+      "price": "2450",
+      "lastPrice": "3500",
+      "description": [
+        "Apple M1 Pro chip for a massive leap in CPU, GPU and machine learning performance ",
+        "8-core CPU delivers up to 3.7x faster performance to fly through pro workflows quicker than ever ",
+        "16-core Neural Engine for up to 11x faster machine learning performance3",
+        "Longer battery life, up to 17 hours"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Apple MacBook Air 13-inch with M1 chip, 7-core GPU, 256GB SSD (Space Grey) [2020]",
+      "subheader": "Apple",
+      "alt": "Apple MacBook Air 13-inch with M1 chip, 7-core GPU, 256GB SSD (Space Grey) [2020]",
+      "imgpath": "/ComputerPics/apple2.png",
+      "rating": 4,
+      "price": "1499",
+      "lastPrice": "0",
+      "description": [
+        "Apple-designed M1 chip for a giant leap in CPU, GPU and machine learning performance ",
+        "Go longer than ever with up to 18 hours of battery life",
+        "Superfast SSD storage launches apps and opens files in an instant ",
+        "13.3-inch Retina display with P3 wide colour for vibrant images and incredible detail3"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "ThinApple MacBook Air 13-inch i5 512GB 2020 (Gold) [^Refurbished]",
+      "subheader": "Apple",
+      "alt": "Apple MacBook Air 13-inch i5 512GB 2020 (Gold) [^Refurbished]",
+      "imgpath": "/ComputerPics/apple3.png",
+      "rating": 4,
+      "price": "1569",
+      "lastPrice": "0",
+      "description": [
+        "Stunning 13.3-inch Retina display with True Tone technology",
+        "Backlit Magic Keyboard and Touch ID",
+        "10th-generation Intel Core i5 processor",
+        "8GB of memory"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Acer 15.6 Touchscreen Chromebook Laptop,Silver (CB315-3HT-C16B)",
+      "subheader": "Acer",
+      "alt": "Acer 15.6 Touchscreen Chromebook Laptop,Silver (CB315-3HT-C16B)",
+      "imgpath": "/ComputerPics/acer.png",
+      "rating": 4,
+      "price": "191",
+      "lastPrice": "0",
+      "description": [
+        "Companion On-the-Go; Intel Celeron processor provides crisp video playback and enables multitasking effortessly. ",
+        "The large 15.6 touch display with anti-glare coating, narrow bezel gives you a greater workspace and an integerated numeric keypad.",
+        "Flexible Connectivity; two USB Type-C ports provide ultra-quick data transfer, video streaming and battery charging.",
+        "All day battery life, up to 12.5 hours."
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Acer 11.6 Chromebook Laptop, Silver (CB311-9H-C1JW)",
+      "subheader": "Acer",
+      "alt": "Acer 11.6 Chromebook Laptop, Silver (CB311-9H-C1JW)",
+      "imgpath": "/ComputerPics/acer1.png",
+      "rating": 4,
+      "price": "99",
+      "lastPrice": "0",
+      "description": [
+        "Intel Celeron processor provides crisp video playback adn enables multitasking effortessly. ",
+        "Flexible Connectivity with two USB Type-C ports provide ultra-quick data transfer, video streaming and battery charging. ",
+        "Effortless Mobility - just 0.71 inches thin and weighing less than 2.35lbs this Chromebook can go everywhere with you.",
+        "All day battery life, up to 10 hours."
+      ]
+    },
+    {
+      "title": "Acer 15.6 Windows 10 Home Laptop, Black (A315-56-53E3)",
+      "description": [
+        "Intel Ci5-1035G1 (10th Gen) Intelligent Performance features adapt to you and the things you do, for a personalized and responsive experience.",
+        "Microsoft Office Trial.",
+        "Narrow bezel design offers a larger viewing area for amazing images.",
+        "Up to 8 hours of battery life."
+      ],
+      "subheader": "Acer",
+      "alt": "Acer 15.6 Windows 10 Home Laptop, Black (A315-56-53E3)",
+      "imgpath": "/ComputerPics/acer2.png",
+      "price": "329",
+      "lastPrice": "0",
+      "rating": 4,
+      "id": 21
+    }
+  ],
+  "Cpu": [
+    {
+      "id": 1,
+      "title": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop",
+      "subheader": "Lenovo",
+      "alt": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop",
+      "imgpath": "/ComputerPics/lenovo.png",
+      "rating": 4,
+      "price": "1444",
+      "description": "Premium experience redefined 14 redesigned 6th generation, 2-in-1 business laptop Designed on Intel® Evo™ vPro® platform Impressive   16:10 display Wider TouchPad Larger battery for more time unplugged A super-responsive device for entertainment, teleconferencing, note  taking & sketching New Storm Gray chassis with tone-matched keyboard   Equipped with a built-in garaged pen Perfect for business and creative  professionals alike"
+    }
+  ]
+}

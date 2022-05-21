@@ -1,0 +1,257 @@
+{
+  "users": [
+    {
+      "name": "Adar Azoulay",
+      "email": "adarazoulay@gmail.com",
+      "username": "AdarAzoulay",
+      "password": "123123aa",
+      "dateCreated": "Sun Apr 1 2022 13:48:31 GMT+0300 (שעון ישראל (קיץ))",
+      "profilePic": "/ProfilePics/Adar.png",
+      "cart": [
+        {
+          "item": "ThinkPad T15 Gen 2 (15” Intel) Laptop",
+          "amount": 4,
+          "price": 1100,
+          "img": "/ComputerPics/lenovo1.png",
+          "id": 2
+        },
+        {
+          "item": "ThinkPad X12 Detachable (12, Intel) Tablet",
+          "amount": 4,
+          "price": 1490,
+          "img": "/ComputerPics/lenovo2.png",
+          "id": 3
+        },
+        {
+          "item": "Yoga 9i (14”) 2 in 1 laptop",
+          "amount": 1,
+          "price": 1099,
+          "img": "/ComputerPics/lenovo3.png",
+          "id": 4
+        },
+        {
+          "item": "OMEN by HP Laptop 16-c0035nr",
+          "amount": 4,
+          "price": 1440,
+          "img": "/ComputerPics/hp.png",
+          "id": 6
+        }
+      ],
+      "isAdmin": true,
+      "id": 1
+    },
+    {
+      "name": "Bar Cohen",
+      "email": "barcohen@gmail.com",
+      "username": "BarCohen",
+      "password": "123123bb",
+      "dateCreated": "Sun Apr 1 2022 13:48:31 GMT+0300 (שעון ישראל (קיץ))",
+      "profilePic": "/ProfilePics/Bar.png",
+      "cart": [],
+      "isAdmin": false,
+      "id": 2
+    }
+  ],
+  "orders": [
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
+          "amount": 1,
+          "itemPrice": 1500
+        },
+        {
+          "itemTitle": "ThinkPad T15 Gen 2 (15” Intel) Laptop",
+          "amount": 1,
+          "itemPrice": 1100
+        },
+        {
+          "itemTitle": "ThinkPad X12 Detachable (12, Intel) Tablet",
+          "amount": 1,
+          "itemPrice": 1490
+        }
+      ],
+      "amountOfItems": 3,
+      "totalPrice": 4090,
+      "purchaseDate": "Thu, 12 May 2022 09:46:26 GMT",
+      "userOrderedID": 1,
+      "personName": "Adar Azoulay",
+      "id": 8
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
+          "amount": 1,
+          "itemPrice": 1500
+        }
+      ],
+      "amountOfItems": 1,
+      "totalPrice": 1500,
+      "purchaseDate": "Thu, 12 May 2022 10:56:19 GMT",
+      "userOrderedID": 1,
+      "personName": "Adar Azoulay",
+      "id": 9
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
+          "amount": 2,
+          "itemPrice": 1500
+        },
+        {
+          "itemTitle": "Yoga 9i (14”) 2 in 1 laptop",
+          "amount": 2,
+          "itemPrice": 1099
+        },
+        {
+          "itemTitle": "Yoga 7i (15”) 2 in 1 Laptop",
+          "amount": 1,
+          "itemPrice": 804
+        }
+      ],
+      "amountOfItems": 5,
+      "totalPrice": 6002,
+      "purchaseDate": "Thu, 12 May 2022 11:22:42 GMT",
+      "userOrderedID": 1,
+      "personName": "Adar Azoulay",
+      "id": 10
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad T15 Gen 2 (15” Intel) Laptop",
+          "amount": 1,
+          "itemPrice": 1100
+        },
+        {
+          "itemTitle": "ThinkPad X12 Detachable (12, Intel) Tablet",
+          "amount": 2,
+          "itemPrice": 1490
+        }
+      ],
+      "amountOfItems": 3,
+      "totalPrice": 4080,
+      "purchaseDate": "Thu, 12 May 2022 13:11:10 GMT",
+      "userOrderedID": 1,
+      "personName": "Adar Azoulay",
+      "id": 11
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
+          "amount": 1,
+          "itemPrice": 1500
+        },
+        {
+          "itemTitle": "ThinkPad X12 Detachable (12, Intel) Tablet",
+          "amount": 2,
+          "itemPrice": 1490
+        }
+      ],
+      "amountOfItems": 3,
+      "totalPrice": 4480,
+      "purchaseDate": "Thu, 12 May 2022 13:43:24 GMT",
+      "userOrderedID": 1,
+      "personName": "Adar Azoulay",
+      "id": 12
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
+          "amount": 2,
+          "itemPrice": 1500
+        },
+        {
+          "itemTitle": "ThinkPad X12 Detachable (12, Intel) Tablet",
+          "amount": 1,
+          "itemPrice": 1490
+        }
+      ],
+      "amountOfItems": 4,
+      "totalPrice": 4490,
+      "purchaseDate": "Sat, 14 May 2022 07:46:22 GMT",
+      "userOrderedID": 2,
+      "personName": "Bar Cohen",
+      "id": 13
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad T15 Gen 2 (15” Intel) Laptop",
+          "amount": 1,
+          "itemPrice": 1100
+        }
+      ],
+      "amountOfItems": 1,
+      "totalPrice": 1100,
+      "purchaseDate": "Sat, 14 May 2022 07:46:36 GMT",
+      "userOrderedID": 2,
+      "personName": "Bar Cohen",
+      "id": 14
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
+          "amount": 1,
+          "itemPrice": 1500
+        }
+      ],
+      "amountOfItems": 1,
+      "totalPrice": 1500,
+      "purchaseDate": "Sat, 14 May 2022 08:46:19 GMT",
+      "userOrderedID": 1,
+      "personName": "Adar Azoulay",
+      "id": 15
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
+          "amount": 4,
+          "itemPrice": 1500
+        },
+        {
+          "itemTitle": "Apple MacBook Pro 14-inch with M1 Pro chip 512GB SSD (Space Grey) [2021]",
+          "amount": 1,
+          "itemPrice": 2999
+        },
+        {
+          "itemTitle": "Apple MacBook Air 13-inch with M1 chip, 7-core GPU, 256GB SSD (Space Grey) [2020]",
+          "amount": 1,
+          "itemPrice": 1499
+        },
+        {
+          "itemTitle": "Acer 15.6 Windows 10 Home Laptop, Black (A315-56-53E3)",
+          "amount": 1,
+          "itemPrice": 329
+        }
+      ],
+      "amountOfItems": 7,
+      "totalPrice": 10827,
+      "purchaseDate": "Sun, 15 May 2022 09:34:55 GMT",
+      "userOrderedID": 1,
+      "personName": "Adar Azoulay",
+      "id": 16
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
+          "amount": 2,
+          "itemPrice": 1500
+        }
+      ],
+      "amountOfItems": 2,
+      "totalPrice": 3000,
+      "purchaseDate": "Sun, 15 May 2022 11:06:47 GMT",
+      "userOrderedID": 2,
+      "personName": "Bar Cohen",
+      "id": 17
+    }
+  ]
+}
