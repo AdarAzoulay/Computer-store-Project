@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import {
   Rating,
@@ -12,11 +12,13 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {addToCart} from "../Shared/Functions";
+import { UserContext } from "../App";
 
 
 
-const ComputerCard = ({ user, setUserCart, ComputerModel, handleDelete }) => { //getting the ComputerModel from ComputerListPage
+const ComputerCard = ({ ComputerModel, handleDelete }) => { //getting the ComputerModel from ComputerListPage
 
+  const { user , setUserCart } = useContext(UserContext);
   const userID = localStorage.getItem("currentUser");
   const navigate = useNavigate();
 

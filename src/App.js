@@ -11,21 +11,23 @@ import LogIn from "./Pages/LogIn";
 import Cart from "./Pages/Cart";
 import PageNotFound from "./Pages/PageNotFound";
 import RequireAuth from "./Components/RequireAuth";
-import React , { useEffect, useState } from "react";
+import React , { createContext, useEffect, useState } from "react";
 import Loading from "./Components/Loading";
 import SpesificComputerListPage from "./Pages/SpesificComputerListPage";
 import DescriptionPage from "./Pages/DescriptionPage";
 import Profile from "./Pages/Profile";
 import ProfileOrders from "./Pages/ProfileOrders";
 import About from "./Pages/About";
-import Ordermanager from "./Pages/Ordermanager";
+import OrderManagement from "./Pages/OrderManagement";
+
 const theme = createTheme({});
+export const UserContext = createContext();
 
 function App() {
-  const [value, setValue] = useState( parseInt(localStorage.getItem("active")));
+  const [value, setValue] = useState(parseInt(localStorage.getItem("active")));
   const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(true)
-  const isAdminRequired = true
+  const [isLoading, setIsLoading] = useState(true);
+  const isAdminRequired = true;
   
 
     const setUserCart = (cart) => {
@@ -43,6 +45,7 @@ function App() {
             delete user.password
             setUser(user)
             setIsLoading(false)
+            console.log(user)
           }
         }));}
         else setIsLoading(false)
@@ -55,23 +58,25 @@ function App() {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <BrowserRouter>
-              <Layout  user={user} setUser={setUser}>
+          <UserContext.Provider value={{user: user, setUser:setUser, setUserCart:setUserCart}}>
+              <Layout>
                 <Routes>
-                  <Route path="/LogIn" element={<LogIn user={user} setUser={setUser}  />} />
-                  <Route path="/Cart" element={ <RequireAuth user={user} ><Cart user={user} setUserCart={setUserCart} /> </RequireAuth>}/>
-                  <Route path="/" element={<RequireAuth user={user}><Homepage /></RequireAuth>} />
-                  <Route path="/User/:userID" element={<RequireAuth user={user}><Profile user={user}/></RequireAuth>} />
-                  <Route path="/User/:userID/Orders" element={<RequireAuth user={user}><ProfileOrders user={user}/></RequireAuth>} />
-                  <Route path="/ComputerListPage/All" element={<RequireAuth  user={user}> <ComputerListPage user={user} setUserCart={setUserCart} value={value} setValue={setValue}/></RequireAuth>} />
-                  <Route path="/ComputerListPage/All/:id" element={<RequireAuth  user={user}> <DescriptionPage user={user} setUserCart={setUserCart}/></RequireAuth>} />
-                  <Route path='/ComputerListPage/:name' element={<RequireAuth  user={user}> <SpesificComputerListPage user={user} setUserCart={setUserCart} value={value} setValue={setValue}/></RequireAuth>} />
-                  <Route path="/CreateList" element={<RequireAuth user={user} isAdminRequired={isAdminRequired}> <CreateList isAdminRequired={isAdminRequired} />  </RequireAuth>} />
-                  <Route path="/EditList" element={<RequireAuth user={user} isAdminRequired={isAdminRequired}><EditList isAdminRequired={isAdminRequired} /></RequireAuth>} />
-                  <Route path="/OrderManagment" element={<RequireAuth user={user} isAdminRequired={isAdminRequired}><Ordermanager user={user} /></RequireAuth>} />
-                  <Route path="/About" element={<RequireAuth user={user} ><About/></RequireAuth>} />
-                  <Route path="*" element={<RequireAuth user={user}><PageNotFound /></RequireAuth>} />
+                  <Route path="/LogIn" element={<LogIn/>} />
+                  <Route path="/Cart" element={ <RequireAuth><Cart/> </RequireAuth>}/>
+                  <Route path="/" element={<RequireAuth><Homepage /></RequireAuth>} />
+                  <Route path="/User/:userID" element={<RequireAuth><Profile/></RequireAuth>} />
+                  <Route path="/User/:userID/Orders" element={<RequireAuth><ProfileOrders/></RequireAuth>} />
+                  <Route path="/ComputerListPage/All" element={<RequireAuth> <ComputerListPage value={value} setValue={setValue}/></RequireAuth>} />
+                  <Route path="/ComputerListPage/All/:id" element={<RequireAuth> <DescriptionPage/></RequireAuth>} />
+                  <Route path='/ComputerListPage/:name' element={<RequireAuth> <SpesificComputerListPage value={value} setValue={setValue}/></RequireAuth>} />
+                  <Route path="/CreateList" element={<RequireAuth isAdminRequired={isAdminRequired}> <CreateList isAdminRequired={isAdminRequired} />  </RequireAuth>} />
+                  <Route path="/EditList" element={<RequireAuth isAdminRequired={isAdminRequired}><EditList isAdminRequired={isAdminRequired} /></RequireAuth>} />
+                  <Route path="/OrderManagment" element={<RequireAuth isAdminRequired={isAdminRequired}><OrderManagement/></RequireAuth>} />
+                  <Route path="/About" element={<RequireAuth ><About/></RequireAuth>} />
+                  <Route path="*" element={<RequireAuth><PageNotFound /></RequireAuth>} />
                 </Routes>
               </Layout>
+              </UserContext.Provider>
           </BrowserRouter>
         </ThemeProvider>
       </StyledEngineProvider>

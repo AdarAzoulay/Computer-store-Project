@@ -1,9 +1,11 @@
 import { Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import CartTable from "../Components/CartTable";
 import CartSummary from "../Components/CartSummary";
 import EmptyCart from "./EmptyCart";
+import { UserContext } from "../App";
+
 
 const useStyles = makeStyles({
   root: {
@@ -19,10 +21,12 @@ const useStyles = makeStyles({
   },
 });
 
-const Cart = ({ user, setUserCart }) => {
+const Cart = () => {
+  const classes = useStyles();
   const [itemsInCart, setItemsInCart] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
-  const classes = useStyles();
+  const { user  , setUserCart} = useContext(UserContext);
+
 
   useEffect(() => {
     let itemCount = 0;

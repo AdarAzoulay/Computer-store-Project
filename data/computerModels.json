@@ -12,8 +12,8 @@
       "alt": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
       "imgpath": "/ComputerPics/lenovo.png",
       "price": "1500",
-      "lastPrice": "2400",
       "rating": 5,
+      "lastPrice": "1500",
       "id": 1
     },
     {
@@ -334,18 +334,6 @@
       "lastPrice": "0",
       "rating": 4,
       "id": 21
-    }
-  ],
-  "Cpu": [
-    {
-      "id": 1,
-      "title": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop",
-      "subheader": "Lenovo",
-      "alt": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop",
-      "imgpath": "/ComputerPics/lenovo.png",
-      "rating": 4,
-      "price": "1444",
-      "description": "Premium experience redefined 14 redesigned 6th generation, 2-in-1 business laptop Designed on Intel® Evo™ vPro® platform Impressive   16:10 display Wider TouchPad Larger battery for more time unplugged A super-responsive device for entertainment, teleconferencing, note  taking & sketching New Storm Gray chassis with tone-matched keyboard   Equipped with a built-in garaged pen Perfect for business and creative  professionals alike"
     }
   ]
 }

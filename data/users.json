@@ -16,25 +16,39 @@
           "id": 2
         },
         {
-          "item": "ThinkPad X12 Detachable (12, Intel) Tablet",
+          "item": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
           "amount": 4,
+          "price": 1500,
+          "img": "/ComputerPics/lenovo.png",
+          "id": 1
+        },
+        {
+          "item": "HP ENVY x360 Convertible Laptop - 15z-eu000 touch",
+          "amount": 3,
+          "price": 749,
+          "img": "/ComputerPics/hp1.png",
+          "id": 7
+        },
+        {
+          "item": "OMEN by HP Laptop 16-c0035nr",
+          "amount": 1,
+          "price": 1440,
+          "img": "/ComputerPics/hp.png",
+          "id": 6
+        },
+        {
+          "item": "ThinkPad X12 Detachable (12, Intel) Tablet",
+          "amount": 1,
           "price": 1490,
           "img": "/ComputerPics/lenovo2.png",
           "id": 3
         },
         {
-          "item": "Yoga 9i (14”) 2 in 1 laptop",
+          "item": "XPS 15 Laptop",
           "amount": 1,
-          "price": 1099,
-          "img": "/ComputerPics/lenovo3.png",
-          "id": 4
-        },
-        {
-          "item": "OMEN by HP Laptop 16-c0035nr",
-          "amount": 4,
-          "price": 1440,
-          "img": "/ComputerPics/hp.png",
-          "id": 6
+          "price": 1790,
+          "img": "/ComputerPics/dell1.png",
+          "id": 12
         }
       ],
       "isAdmin": true,
@@ -61,18 +75,13 @@
           "itemPrice": 1500
         },
         {
-          "itemTitle": "ThinkPad T15 Gen 2 (15” Intel) Laptop",
-          "amount": 1,
-          "itemPrice": 1100
-        },
-        {
           "itemTitle": "ThinkPad X12 Detachable (12, Intel) Tablet",
           "amount": 1,
           "itemPrice": 1490
         }
       ],
       "amountOfItems": 3,
-      "totalPrice": 4090,
+      "totalPrice": 2990,
       "purchaseDate": "Thu, 12 May 2022 09:46:26 GMT",
       "userOrderedID": 1,
       "personName": "Adar Azoulay",

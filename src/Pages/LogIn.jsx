@@ -1,8 +1,10 @@
 import { Button, Card, TextField, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 import ErrorIcon from "@mui/icons-material/Error";
+import { UserContext } from "../App";
+
 
 const useStyles = makeStyles({
   root: {
@@ -41,13 +43,15 @@ const useStyles = makeStyles({
   }
 });
 
-const LogIn = ({ user, setUser }) => {
+const LogIn = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [loginError, setLoginError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const {user,setUser} = useContext(UserContext);
+
 
   useEffect(() => {
     fetch("http://localhost:8001/users")
