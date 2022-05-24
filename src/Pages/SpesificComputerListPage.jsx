@@ -6,6 +6,7 @@ import ComputerCard from "../Components/ComputerCard";
 import ComputerNavBar from "../Components/ComputerNavBar";
 import {handleDelete} from "../Shared/Functions";
 
+
 const useStyles = makeStyles({
     container: {
       padding: "2rem",
@@ -18,9 +19,9 @@ const useStyles = makeStyles({
   });
 
 
-const SpesificComputerListPage = ({ user, setUserCart , value, setValue }) => {
-    let { name } = useParams();
+const SpesificComputerListPage = ({ value, setValue }) => {
 
+    let { name } = useParams();
     const classes = useStyles();
     const [computerModels, setComputerModels] = useState([]);
     const [pageNumber, setPageNumber] = useState(0);
@@ -45,8 +46,6 @@ const SpesificComputerListPage = ({ user, setUserCart , value, setValue }) => {
     .map((ComputerModel) => (
       <Grid item xs={7} sm={4} md={5} lg={4} xl={3} key={ComputerModel.id}>
         <ComputerCard
-        setUserCart={setUserCart}
-          user={user}
           ComputerModel={ComputerModel}
           handleDelete={()=>handleDelete(ComputerModel.id, computerModels , setComputerModels)}
         />

@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import { DataGrid } from "@mui/x-data-grid";
+import { UserContext } from "../App";
+
 
 const columns = [
   { field: "id", headerName: "Order ID", width: 90 },
@@ -10,7 +12,11 @@ const columns = [
  
 ];
 
-const ProfileOrders = ({ user }) => {
+const ProfileOrders = () => {
+
+  const { user } = useContext(UserContext);
+  const [orders, setOrders] = useState([]);
+
   useEffect(() => {
     fetch("http://localhost:8001/orders")
       .then((res) => res.json())
@@ -20,7 +26,7 @@ const ProfileOrders = ({ user }) => {
       });
   }, []);
 
-  const [orders, setOrders] = useState([]);
+  
 
   // const
   const rows = orders.map((t) => {

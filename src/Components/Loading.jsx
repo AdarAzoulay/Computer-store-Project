@@ -4,7 +4,7 @@ import React from 'react'
 const Loading = () => {
   return (
     <div className='center' >
-    <CircularProgress/>
+    <CircularProgress size={"5rem"}/>
     </div>
   )
 }

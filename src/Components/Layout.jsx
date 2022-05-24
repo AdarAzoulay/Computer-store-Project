@@ -20,7 +20,7 @@ import MuiAppBar from "@mui/material/AppBar";
 import CssBaseline from "@mui/material/CssBaseline";
 import MenuIcon from "@mui/icons-material/Menu";
 import { makeStyles, styled } from "@mui/styles";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { menuItems } from "../Shared/MenuItems";
 import { useLocation, useNavigate } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -28,7 +28,7 @@ import { green } from "@mui/material/colors";
 import Footer from "./Footer";
 import { SearchBar } from "./SearchBar";
 import Divider from "@mui/material/Divider";
-
+import { UserContext } from "../App";
 
 const drawerWidth = 240;
 const Datenow = new Date();
@@ -110,7 +110,7 @@ const useStyles = makeStyles((theme) => {
   };
 });
 
-const Layout = ({ children, user, setUser }) => {
+const Layout = ({ children }) => {
   const [itemsInCart, setItemsInCart] = useState(0);
   const classes = useStyles();
   const navigate = useNavigate();
@@ -119,7 +119,7 @@ const Layout = ({ children, user, setUser }) => {
   const [open, setOpen] = useState(true);
   const [anchorEl, setAnchorEl] = useState(null);
   const openProfile = Boolean(anchorEl);
-
+  const {user,setUser} = useContext(UserContext);
 
   useEffect(() => {
     if (user) {

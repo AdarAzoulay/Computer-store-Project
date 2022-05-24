@@ -64,7 +64,7 @@ const Row = ({
     });
     Swal.fire({
       title: "Are you sure?",
-      text: "You won't be able to revert this!",
+      text: "You won't be able to revert it!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -91,6 +91,7 @@ const Row = ({
       }
     });
   };
+
 
   return (
     <>
@@ -145,7 +146,7 @@ const Row = ({
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {row.history.map((historyRow) => (
+                  {row.itemOrdered.map((historyRow) => (
                     <TableRow key={historyRow.itemTitle}>
                       <TableCell>{historyRow.itemTitle}</TableCell>
                       <TableCell align="right">{historyRow.amount}</TableCell>
@@ -181,30 +182,11 @@ const Row = ({
   );
 };
 
-// Row.propTypes = {
-//   row: PropTypes.shape({
-//     calories: PropTypes.number.isRequired,
-//     carbs: PropTypes.number.isRequired,
-//     fat: PropTypes.number.isRequired,
-//     history: PropTypes.arrayOf(
-//       PropTypes.shape({
-//         amount: PropTypes.number.isRequired,
-//         customerId: PropTypes.string.isRequired,
-//         date: PropTypes.string.isRequired,
-//       }),
-//     ).isRequired,
-//     name: PropTypes.string.isRequired,
-//     price: PropTypes.number.isRequired,
-//     protein: PropTypes.number.isRequired,
-//   }).isRequired,
-// };
-
-const Ordermanager = () => {
+const OrderManagement = () => {
   const [orders, setOrders] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(6);
   const [spesificOrdersArray, setSpesificOrdersArray] = useState([]);
-  const [rows, setRows] = useState([]);
   const [filterObj, setFilterObj] = useState({
     id: "",
     userOrderedID: "",
@@ -217,7 +199,6 @@ const Ordermanager = () => {
     fetch("http://localhost:8001/orders")
       .then((res) => res.json())
       .then((data) => {
-        setOrders(data);
         if (
           !filterObj.id &&
           !filterObj.userOrderedID &&
@@ -232,10 +213,10 @@ const Ordermanager = () => {
               personName: item.personName,
               totalPrice: item.totalPrice,
               purchaseDate: item.purchaseDate,
-              history: item.itemOrdered,
+              itemOrdered: item.itemOrdered,
             };
           });
-          setRows(insertRows);
+          setOrders(insertRows);
         } else {
           const insertRows = data
             .filter((item) => {
@@ -286,14 +267,15 @@ const Ordermanager = () => {
                 personName: item.personName,
                 totalPrice: item.totalPrice,
                 purchaseDate: item.purchaseDate,
-                history: item.itemOrdered,
+                itemOrdered: item.itemOrdered,
               };
             });
-          setRows(insertRows);
+            setOrders(insertRows);
         }
       });
   }, [filterObj]);
 
+   
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -396,7 +378,7 @@ const Ordermanager = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows
+            {orders
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => (
                 <Row
@@ -414,7 +396,7 @@ const Ordermanager = () => {
       <TablePagination
         rowsPerPageOptions={[2, 4, 6]}
         component="div"
-        count={rows.length}
+        count={orders.length}
         rowsPerPage={rowsPerPage}
         page={page}
         onPageChange={handleChangePage}
@@ -424,4 +406,4 @@ const Ordermanager = () => {
   );
 };
 
-export default Ordermanager;
+export default OrderManagement;

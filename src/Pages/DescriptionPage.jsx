@@ -5,12 +5,14 @@ import {
   Rating,
   Typography,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import {getLocal, addToCart} from "../Shared/Functions";
+import { UserContext } from "../App";
 
 
-const DescriptionPage = ({ user, setUserCart }) => {
+const DescriptionPage = () => {
+  const { user , setUserCart } = useContext(UserContext);
   const [computerModels, setComputerModels] = useState({});
   const [descriptionArray, setDescriptionArray] = useState([]);
   const userID = localStorage.getItem("currentUser");

@@ -1,7 +1,9 @@
 import { Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React from "react";
+import React, { useContext } from "react";
 import {  useNavigate, useParams } from "react-router-dom";
+import { UserContext } from "../App";
+
 
 const useStyles = makeStyles({
   img: {
@@ -33,9 +35,10 @@ const useStyles = makeStyles({
   }
 });
 
-const Profile = ({ user }) => {
+const Profile = () => {
 
   const classes = useStyles();
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
   let { userID } = useParams();
   const date = user.dateCreated;
