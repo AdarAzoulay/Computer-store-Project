@@ -30,7 +30,7 @@ const ComputerCard = ({ ComputerModel, handleDelete }) => { //getting the Comput
     <Card sx={{ maxWidth: 300, minWidth: 300, maxHeight: 623 }}>
       {user.isAdmin && ComputerModel.id}
       <CardHeader
-        sx={{ minHeight: 115, maxHeight: 80 }}
+        sx={{ minHeight: 150, maxHeight: 80, marginTop:"2vh" }}
         action={
           user.isAdmin && (
             <IconButton onClick={() => handleDelete(ComputerModel.id)}>
@@ -57,7 +57,7 @@ const ComputerCard = ({ ComputerModel, handleDelete }) => { //getting the Comput
             value={parseInt(ComputerModel.rating)}
             readOnly
           />
-          <Typography variant="h4">{ComputerModel.price}$</Typography>
+          <Typography variant="h4">${ComputerModel.price}</Typography>
           <Button variant="outlined" onClick={()=> addToCart(user,ComputerModel, setUserCart, userID)}>
             Add to cart
           </Button>

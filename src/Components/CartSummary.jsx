@@ -39,12 +39,12 @@ const CartSummary = ({user,setUserCart,itemsInCart, totalPrice}) => {
       <Checkout user={user} setUserCart={setUserCart}/>
       <div className={classes.flex}>
         <h5>Items({itemsInCart})</h5>
-        <h5>{totalPrice}$</h5>
+        <h5>${totalPrice}</h5>
       </div>
       
       <div className={classes.flex}>
         <h1>To pay</h1>
-        <h1>{totalPrice}$</h1>
+        <h1>${totalPrice}</h1>
       </div>
     </Paper>
     </div>

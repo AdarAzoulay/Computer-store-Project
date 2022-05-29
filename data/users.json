@@ -3,67 +3,40 @@
     {
       "name": "Adar Azoulay",
       "email": "adarazoulay@gmail.com",
-      "username": "AdarAzoulay",
       "password": "123123aa",
       "dateCreated": "Sun Apr 1 2022 13:48:31 GMT+0300 (שעון ישראל (קיץ))",
       "profilePic": "/ProfilePics/Adar.png",
-      "cart": [
-        {
-          "item": "ThinkPad T15 Gen 2 (15” Intel) Laptop",
-          "amount": 4,
-          "price": 1100,
-          "img": "/ComputerPics/lenovo1.png",
-          "id": 2
-        },
-        {
-          "item": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
-          "amount": 4,
-          "price": 1500,
-          "img": "/ComputerPics/lenovo.png",
-          "id": 1
-        },
-        {
-          "item": "HP ENVY x360 Convertible Laptop - 15z-eu000 touch",
-          "amount": 3,
-          "price": 749,
-          "img": "/ComputerPics/hp1.png",
-          "id": 7
-        },
-        {
-          "item": "OMEN by HP Laptop 16-c0035nr",
-          "amount": 1,
-          "price": 1440,
-          "img": "/ComputerPics/hp.png",
-          "id": 6
-        },
-        {
-          "item": "ThinkPad X12 Detachable (12, Intel) Tablet",
-          "amount": 1,
-          "price": 1490,
-          "img": "/ComputerPics/lenovo2.png",
-          "id": 3
-        },
-        {
-          "item": "XPS 15 Laptop",
-          "amount": 1,
-          "price": 1790,
-          "img": "/ComputerPics/dell1.png",
-          "id": 12
-        }
-      ],
+      "cart": [],
       "isAdmin": true,
       "id": 1
     },
     {
       "name": "Bar Cohen",
       "email": "barcohen@gmail.com",
-      "username": "BarCohen",
       "password": "123123bb",
       "dateCreated": "Sun Apr 1 2022 13:48:31 GMT+0300 (שעון ישראל (קיץ))",
       "profilePic": "/ProfilePics/Bar.png",
-      "cart": [],
+      "cart": [
+        {
+          "item": "ThinkPad T15 Gen 2 (15” Intel) Laptop",
+          "amount": 1,
+          "price": 1100,
+          "img": "/ComputerPics/lenovo1.png",
+          "id": 2
+        }
+      ],
       "isAdmin": false,
       "id": 2
+    },
+    {
+      "name": "adad c",
+      "email": "asda@walla.com",
+      "password": "asd123asd",
+      "dateCreated": "Sun May 29 2022 13:05:16 GMT+0300 (שעון ישראל (קיץ))",
+      "profilePic": "/ProfilePics/Random.png",
+      "cart": [],
+      "isAdmin": false,
+      "id": 3
     }
   ],
   "orders": [
@@ -261,6 +234,66 @@
       "userOrderedID": 2,
       "personName": "Bar Cohen",
       "id": 17
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad X1 Yoga Gen 6 | 2 in 1 Business Laptop4.5",
+          "amount": 4,
+          "itemPrice": 1500
+        },
+        {
+          "itemTitle": "XPS 15 Laptop",
+          "amount": 4,
+          "itemPrice": 1790
+        }
+      ],
+      "amountOfItems": 8,
+      "totalPrice": 13160,
+      "purchaseDate": "Tue, 24 May 2022 07:42:30 GMT",
+      "userOrderedID": 2,
+      "personName": "Bar Cohen",
+      "id": 18
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad T15 Gen 2 (15” Intel) Laptop",
+          "amount": 2,
+          "itemPrice": 1100
+        }
+      ],
+      "amountOfItems": 2,
+      "totalPrice": 2200,
+      "purchaseDate": "Tue, 24 May 2022 07:44:12 GMT",
+      "userOrderedID": 2,
+      "personName": "Bar Cohen",
+      "id": 19
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "OMEN by HP Laptop 16-c0035nr",
+          "amount": 1,
+          "itemPrice": 1440
+        },
+        {
+          "itemTitle": "ThinkPad X12 Detachable (12, Intel) Tablet",
+          "amount": 2,
+          "itemPrice": 1490
+        },
+        {
+          "itemTitle": "XPS 15 Laptop",
+          "amount": 1,
+          "itemPrice": 1790
+        }
+      ],
+      "amountOfItems": 4,
+      "totalPrice": 6210,
+      "purchaseDate": "Sat, 28 May 2022 18:17:21 GMT",
+      "userOrderedID": 1,
+      "personName": "Adar Azoulay",
+      "id": 20
     }
   ]
 }

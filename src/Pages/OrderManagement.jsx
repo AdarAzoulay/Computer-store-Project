@@ -199,6 +199,7 @@ const OrderManagement = () => {
     fetch("http://localhost:8001/orders")
       .then((res) => res.json())
       .then((data) => {
+        setPage(0)
         if (
           !filterObj.id &&
           !filterObj.userOrderedID &&
@@ -394,7 +395,7 @@ const OrderManagement = () => {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[2, 4, 6]}
+        rowsPerPageOptions={[2, 5, 10]}
         component="div"
         count={orders.length}
         rowsPerPage={rowsPerPage}
