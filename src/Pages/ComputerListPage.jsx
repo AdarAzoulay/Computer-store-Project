@@ -38,7 +38,7 @@ const ComputerListPage = ({ value, setValue }) => {
   const displayCards = computerModels
     .slice(pagesVisited, pagesVisited + cardsPerPage)
     .map((ComputerModel) => (
-      <Grid item xs={8} sm={4} md={5} lg={4} xl={3} key={ComputerModel.id}>
+      <Grid item xs={8} sm={7} md={5} lg={4} xl={3} key={ComputerModel.id}>
         <ComputerCard
           ComputerModel={ComputerModel}
           handleDelete={()=>handleDelete(ComputerModel.id, computerModels , setComputerModels)}
@@ -64,7 +64,6 @@ const ComputerListPage = ({ value, setValue }) => {
             count={pageCount}
             color="secondary"
             onChange={changePage}
-            // handleClick={handleClick}
           />
         </Stack>
       </div>

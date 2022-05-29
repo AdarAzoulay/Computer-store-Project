@@ -45,7 +45,7 @@ const ProfileOrders = () => {
     };
   });
   return (
-    <div style={{ height: "90vh", width: "90%", margin: "5vh 0 5vh 10vh" }}>
+    <div style={{ height: "90vh", width: "90%", margin: "5vh 0 5vh 5vh" }}>
       <DataGrid
         rows={rows}
         columns={columns}

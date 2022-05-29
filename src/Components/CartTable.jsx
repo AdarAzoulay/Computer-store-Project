@@ -108,7 +108,6 @@ const CartTable = ({ user, setUserCart, setItemsInCart, setTotalPrice }) => {
                     <option value="3">3</option>
                     <option value="4">4</option>
                   </select>
-                  {/* {item.amount} */}
                 </TableCell>
                 <TableCell align="right">{item.amount} X {item.price} = {item.amount*item.price}</TableCell>
                 <TableCell align="right">

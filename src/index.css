@@ -47,29 +47,33 @@ body {
 .flex {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-top: 5vh;
   height: 63vh;
 }
 
-.css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected {
-  background-color: lightgreen;
+.css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected {  /* ComputerNavBar */
+  background-color: #4682B4;
 }
 
-.css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root:hover {
+.css-imwso6-MuiBottomNavigationAction-label.Mui-selected{ /* ComputerNavBar */
+  font-size: 1.5rem;
+  color: black;
+}
+
+.css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root:hover { /* ComputerNavBar */
   background-color: aliceblue;
   border: 1px solid black;
 }
 
-.css-imwso6-MuiBottomNavigationAction-label {
+.css-imwso6-MuiBottomNavigationAction-label { /* ComputerNavBar */
   font-size: large;
 }
 
-.css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root {
+.css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root { /* ComputerNavBar */
   max-width: none;
 }
 
 .css-3ihp42-MuiDataGrid-root .MuiDataGrid-cell {
-
   white-space: pre;
 }
 
@@ -154,3 +158,8 @@ a:hover {
 .div-root-14{
   padding: 0 !important;
 }
+
+/* input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 50px #f0f0f0 inset;
+} */

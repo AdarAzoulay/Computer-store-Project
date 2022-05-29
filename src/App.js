@@ -19,6 +19,7 @@ import Profile from "./Pages/Profile";
 import ProfileOrders from "./Pages/ProfileOrders";
 import About from "./Pages/About";
 import OrderManagement from "./Pages/OrderManagement";
+import SignUp from "./Components/Signup";
 
 const theme = createTheme({});
 export const UserContext = createContext();
@@ -62,6 +63,7 @@ function App() {
               <Layout>
                 <Routes>
                   <Route path="/LogIn" element={<LogIn/>} />
+                  <Route path="/SignUp" element={<SignUp/>} />
                   <Route path="/Cart" element={ <RequireAuth><Cart/> </RequireAuth>}/>
                   <Route path="/" element={<RequireAuth><Homepage /></RequireAuth>} />
                   <Route path="/User/:userID" element={<RequireAuth><Profile/></RequireAuth>} />
