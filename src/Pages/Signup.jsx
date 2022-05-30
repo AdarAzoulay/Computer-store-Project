@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     backgroundColor: "#f0f0f0",
     padding: "2rem",
     borderRadius: "15px",
-    minWidth: "27vw",
+    minWidth: "25vw",
     minHeight: "55vh",
   },
   field: {

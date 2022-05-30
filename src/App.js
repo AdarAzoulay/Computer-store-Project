@@ -19,7 +19,7 @@ import Profile from "./Pages/Profile";
 import ProfileOrders from "./Pages/ProfileOrders";
 import About from "./Pages/About";
 import OrderManagement from "./Pages/OrderManagement";
-import SignUp from "./Components/Signup";
+import SignUp from "./Pages/Signup";
 
 const theme = createTheme({});
 export const UserContext = createContext();
@@ -48,8 +48,9 @@ function App() {
             setIsLoading(false)
             console.log(user)
           }
-        }));}
-        else setIsLoading(false)
+        }));
+      }else
+         setIsLoading(false)
   }, []);
 
   if(isLoading) {

@@ -27,16 +27,6 @@
       ],
       "isAdmin": false,
       "id": 2
-    },
-    {
-      "name": "adad c",
-      "email": "asda@walla.com",
-      "password": "asd123asd",
-      "dateCreated": "Sun May 29 2022 13:05:16 GMT+0300 (שעון ישראל (קיץ))",
-      "profilePic": "/ProfilePics/Random.png",
-      "cart": [],
-      "isAdmin": false,
-      "id": 3
     }
   ],
   "orders": [

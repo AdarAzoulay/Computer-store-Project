@@ -1,7 +1,6 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { UserContext } from "../App";
-
 
 const columns = [
   { field: "id", headerName: "Order ID", width: 90 },
@@ -9,11 +8,9 @@ const columns = [
   { field: "orders", headerName: "Order", width: 650 },
   { field: "price", headerName: "Price", width: 70 },
   { field: "date", headerName: "Date", width: 250 },
- 
 ];
 
 const ProfileOrders = () => {
-
   const { user } = useContext(UserContext);
   const [orders, setOrders] = useState([]);
 
@@ -21,19 +18,16 @@ const ProfileOrders = () => {
     fetch("http://localhost:8001/orders")
       .then((res) => res.json())
       .then((data) => {
-          const newOrders = data.filter((t)=> t.userOrderedID === user.id);
+        const newOrders = data.filter((t) => t.userOrderedID === user.id);
         setOrders(newOrders);
       });
   }, []);
 
-  
-
-  // const
   const rows = orders.map((t) => {
     let ordersTitle = "";
     let count = 1;
     t.itemOrdered.forEach((element) => {
-      ordersTitle += `${count}. ${element.itemTitle} -   x${element.amount}\n` ;
+      ordersTitle += `${count}. ${element.itemTitle} -   x${element.amount}\n`;
       count++;
     });
     return {
@@ -56,5 +50,4 @@ const ProfileOrders = () => {
   );
 };
 
-
-export default ProfileOrders
+export default ProfileOrders;

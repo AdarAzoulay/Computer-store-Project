@@ -92,7 +92,6 @@ const Row = ({
     });
   };
 
-
   return (
     <>
       <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
@@ -199,7 +198,7 @@ const OrderManagement = () => {
     fetch("http://localhost:8001/orders")
       .then((res) => res.json())
       .then((data) => {
-        setPage(0)
+        setPage(0);
         if (
           !filterObj.id &&
           !filterObj.userOrderedID &&
@@ -271,12 +270,11 @@ const OrderManagement = () => {
                 itemOrdered: item.itemOrdered,
               };
             });
-            setOrders(insertRows);
+          setOrders(insertRows);
         }
       });
   }, [filterObj]);
 
-   
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
