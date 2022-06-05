@@ -86,25 +86,48 @@ const EditList = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:8000/computerModels/" + id, {
-      method: "PUT",
-      headers: { "Content-type": "application/json" },
-      body: JSON.stringify({
-        title,
-        description,
-        subheader,
-        alt: title,
-        imgpath: imagePath,
-        price: price,
-        rating,
-        lastPrice: previousPrice
-      }),
-    });
-    Swal.fire({
-      icon: "success",
-      title: "Item has been edited",
-    });
-    setId(0);
+    if(previousPrice === price){
+      fetch("http://localhost:8000/computerModels/" + id, {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+          title,
+          description,
+          subheader,
+          alt: title,
+          imgpath: imagePath,
+          price: price,
+          rating,
+          lastPrice
+        }),
+      });
+      Swal.fire({
+        icon: "success",
+        title: "Item has been edited",
+      });
+      setId(0);
+    }
+    else{
+      fetch("http://localhost:8000/computerModels/" + id, {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({
+          title,
+          description,
+          subheader,
+          alt: title,
+          imgpath: imagePath,
+          price: price,
+          rating,
+          lastPrice: previousPrice
+        }),
+      });
+      Swal.fire({
+        icon: "success",
+        title: "Item has been edited",
+      });
+      setId(0);
+    }
   };
 
   return (

@@ -27,9 +27,7 @@ const CardHomepage = ({ computerModels }) => {
             image={computerModels.imgpath}
             alt={computerModels.alt}
           />
-          <CardContent
-          sx={{ minHeight: "16vh", padding:"16px 16px 0 16px" }}
-          >
+          <CardContent sx={{ minHeight: "16vh", padding: "16px 16px 0 16px" }}>
             <Typography gutterBottom variant="h5" component="div">
               {computerModels.subheader}
             </Typography>
@@ -38,22 +36,38 @@ const CardHomepage = ({ computerModels }) => {
             </Typography>
           </CardContent>
         </CardActionArea>
-        <div>
-          <Typography sx={{ display: "inline" }}>List Price: </Typography>
-          <Typography
-            sx={{ textDecoration: "line-through", display: "inline" }}
-          >
-            {computerModels.lastPrice}
-          </Typography>
-        </div>
+        {computerModels.lastPrice - computerModels.price > 0 ? (
+          <div>
+            <Typography sx={{ display: "inline" }}>List Price: </Typography>
+            <Typography
+              sx={{ textDecoration: "line-through", display: "inline" }}
+            >
+              {computerModels.lastPrice}
+            </Typography>
+          </div>
+        ) : null}
+
         <div>
           <Typography sx={{ display: "inline" }}>With Deal: </Typography>
-          <Typography sx={{ display: "inline", color:"red", fontSize: "large" }}>${computerModels.price}</Typography>
+          <Typography
+            sx={{ display: "inline", color: "red", fontSize: "large" }}
+          >
+            ${computerModels.price}
+          </Typography>
         </div>
-        <div>
-        <Typography sx={{display: "inline",}}>You Save: </Typography>
-        <Typography sx={{display: "inline", color:"red" }}>${(computerModels.lastPrice- computerModels.price)} ({Math.round(100 * (computerModels.lastPrice - computerModels.price) / computerModels.lastPrice)}%)</Typography>
-        </div>
+        {computerModels.lastPrice - computerModels.price > 0 ? (
+          <div>
+            <Typography sx={{ display: "inline" }}>You Save: </Typography>
+            <Typography sx={{ display: "inline", color: "red" }}>
+              ${computerModels.lastPrice - computerModels.price} (
+              {Math.round(
+                (100 * (computerModels.lastPrice - computerModels.price)) /
+                  computerModels.lastPrice
+              )}
+              %)
+            </Typography>
+          </div>
+        ) : null}
       </Card>
     );
   } else return null;
