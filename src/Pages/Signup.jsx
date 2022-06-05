@@ -69,17 +69,16 @@ const SignUp = () => {
   const [item, setItem] = useState(null);
 
   useEffect(() => {
-    let a = [];
-    var v = fetch("https://restcountries.com/v2/all")
+    let countryArray = [];
+    var countryFetch = fetch("https://restcountries.com/v2/all")
       .then((res) => res.json())
       .then((data) => {
         data.forEach((element) => {
-          a.push(element.name);
+          countryArray.push(element.name);
         });
       });
-    v.then(() => {
-      console.log(a[0]);
-      setList(a);
+      countryFetch.then(() => {
+      setList(countryArray);
     });
   }, []);
 

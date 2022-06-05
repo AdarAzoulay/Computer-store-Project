@@ -19,6 +19,12 @@
     {
       "name": "Bar Cohen",
       "email": "barcohen@gmail.com",
+      "address": {
+        "street": "Ehad Ha'am 101",
+        "city": "Kfar Saba",
+        "country": "Israel",
+        "zipCode": "12322"
+      },
       "password": "123123bb",
       "dateCreated": "Sun Apr 1 2022 13:48:31 GMT+0300 (שעון ישראל (קיץ))",
       "profilePic": "/ProfilePics/Bar.png",
@@ -213,6 +219,42 @@
         "zipCode": "45454"
       },
       "id": 29
+    },
+    {
+      "itemOrdered": [
+        {
+          "itemTitle": "ThinkPad T15 Gen 2 (15” Intel) Laptop",
+          "amount": 1,
+          "itemPrice": 1100
+        },
+        {
+          "itemTitle": "Yoga 9i (14”) 2 in 1 laptop",
+          "amount": 1,
+          "itemPrice": 1099
+        },
+        {
+          "itemTitle": "Acer 15.6 Windows 10 Home Laptop, Black (A315-56-53E3)",
+          "amount": 1,
+          "itemPrice": 329
+        },
+        {
+          "itemTitle": "HP Laptop - 17z-cp000 touch optional",
+          "amount": 1,
+          "itemPrice": 1444
+        }
+      ],
+      "amountOfItems": 4,
+      "totalPrice": 3972,
+      "purchaseDate": "Sun, 05 Jun 2022 09:29:20 GMT",
+      "userOrderedID": 2,
+      "personName": "Bar Cohen",
+      "address": {
+        "street": "Ehad Ha'am 101",
+        "city": "Kfat Saba",
+        "country": "Israel",
+        "zipCode": "12322"
+      },
+      "id": 30
     }
   ]
 }

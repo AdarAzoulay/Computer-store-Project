@@ -85,7 +85,7 @@ const Homepage = () => {
         <div className={classes.flexRow}>
           <CardHomepage computerModels={computerModels[0]} className={classes.rowItem}/>
           <CardHomepage computerModels={computerModels[1]} className={classes.rowItem}/>
-          <CardHomepage computerModels={computerModels[2]} />
+          {window.innerWidth > 1475 ?  <CardHomepage computerModels={computerModels[2]} /> : null }
         </div>
       </div>
       <div className={classes.flexColImg}>
