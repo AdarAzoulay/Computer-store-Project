@@ -172,6 +172,7 @@ const Checkout = ({ user, setUserCart }) => {
         purchaseDate: d.toUTCString(),
         userOrderedID: parseInt(userID),
         personName: user.name,
+        address: user.address
       }),
     });
     Swal.fire({

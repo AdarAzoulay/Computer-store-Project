@@ -1,13 +1,17 @@
 import {
   Button,
   Card,
+  FormControl,
   IconButton,
+  InputLabel,
   Link,
+  MenuItem,
+  Select,
   TextField,
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 import ErrorIcon from "@mui/icons-material/Error";
 import { UserContext } from "../App";
@@ -47,14 +51,13 @@ const useStyles = makeStyles({
   flex: {
     marginTop: "1rem",
     display: "flex",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
   },
 });
 
 const SignUp = () => {
   const classes = useStyles();
   const navigate = useNavigate();
-  const [users, setUsers] = useState([]);
   const [loginError, setLoginError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [nameError, setNameError] = useState("");
@@ -62,30 +65,44 @@ const SignUp = () => {
   const [passwordShown, setPasswordShown] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
   const { user, setUser } = useContext(UserContext);
+  const [list, setList] = useState([]);
+  const [item, setItem] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8001/users")
+    let a = [];
+    var v = fetch("https://restcountries.com/v2/all")
       .then((res) => res.json())
       .then((data) => {
-        setUsers(data);
+        data.forEach((element) => {
+          a.push(element.name);
+        });
       });
+    v.then(() => {
+      console.log(a[0]);
+      setList(a);
+    });
   }, []);
 
   const handleClick = (e) => {
+    let address = {
+      street: e.target[7].value,
+      city: e.target[9].value,
+      country: e.target[11].value,
+      zipCode: e.target[13].value,
+    };
     e.preventDefault();
     const date = new Date();
-    users.forEach((user) => {
-      if (user.email === e.target[2].value.trim()) {
-        return setLoginError("Email is already Exists.");
-      }
-    });
-
     if (
       e.target[0].value &&
       e.target[2].value &&
       e.target[4].value &&
+      e.target[7].value &&
+      e.target[9].value &&
+      e.target[11].value &&
+      e.target[13].value &&
       !passwordError &&
       !emailError &&
+      !loginError &&
       !nameError &&
       isSubscribed
     ) {
@@ -95,6 +112,7 @@ const SignUp = () => {
         body: JSON.stringify({
           name: e.target[0].value,
           email: e.target[2].value,
+          address: address,
           password: e.target[4].value,
           dateCreated: date.toString(),
           profilePic: "/ProfilePics/Random.png",
@@ -133,6 +151,23 @@ const SignUp = () => {
       setNameError("Must include First name and Last name");
     } else {
       setNameError("");
+    }
+  };
+
+  const emailExists = (e) => {
+    let bool = false;
+    fetch("http://localhost:8001/users")
+      .then((res) => res.json())
+      .then((data) =>
+        data.forEach((user) => {
+          if (user.email === e.target.value.trim()) {
+            bool = true;
+            setLoginError("Email is already Exists.");
+          }
+        })
+      );
+    if (!bool) {
+      setLoginError("");
     }
   };
 
@@ -179,128 +214,181 @@ const SignUp = () => {
         <Typography variant="h4">Sign Up</Typography>
         <hr />
         <form onSubmit={handleClick}>
-          <Typography
-            sx={{
-              width: "100%",
-              backgroundColor: "rgba(235, 66, 66, 0.2)",
-              color: "rgb(235, 66, 66)",
-              borderRadius: "5px",
-              paddingLeft: "3px",
-            }}
-            variant="h6"
-          >
-            {loginError ? (
-              <ErrorIcon
+          <div className={classes.flex}>
+            <div style={{ marginRight: "1.5vw" }}>
+              <Typography
                 sx={{
-                  marginRight: "0.5rem",
-                  position: "relative",
-                  top: "0.25rem",
+                  minWidth: "18vw",
+                  backgroundColor: "rgba(235, 66, 66, 0.2)",
+                  color: "rgb(235, 66, 66)",
+                  borderRadius: "5px",
+                  paddingLeft: "3px",
+                  margin: "8px 0",
                 }}
+                variant="h6"
+              >
+                {loginError ? (
+                  <ErrorIcon
+                    sx={{
+                      marginRight: "0.5rem",
+                      position: "relative",
+                      top: "0.25rem",
+                    }}
+                  />
+                ) : null}
+                <span>{loginError}</span>
+              </Typography>
+              <TextField
+                sx={{ minWidth: "18vw" }}
+                // fullWidth
+                required
+                label="Name"
+                id="outlined-name-required"
+                type="text"
+                onChange={handleName}
               />
-            ) : null}
-            <span>{loginError}</span>
-          </Typography>
-          <TextField
-            margin="normal"
-            fullWidth
-            required
-            label="Name"
-            id="outlined-name-required"
-            type="text"
-            onChange={handleName}
-          />
-          <Typography
-            sx={{
-              width: "100%",
-              backgroundColor: "rgba(235, 66, 66, 0.2)",
-              color: "rgb(235, 66, 66)",
-              borderRadius: "5px",
-              paddingLeft: "3px",
-            }}
-            variant="h6"
-          >
-            {nameError ? (
-              <ErrorIcon
+              <Typography
                 sx={{
-                  marginRight: "0.5rem",
-                  position: "relative",
-                  top: "0.25rem",
+                  minWidth: "18vw",
+                  backgroundColor: "rgba(235, 66, 66, 0.2)",
+                  color: "rgb(235, 66, 66)",
+                  borderRadius: "5px",
+                  paddingLeft: "3px",
+                  margin: "8px 0",
                 }}
+                variant="h6"
+              >
+                {nameError ? (
+                  <ErrorIcon
+                    sx={{
+                      marginRight: "0.5rem",
+                      position: "relative",
+                      top: "0.25rem",
+                    }}
+                  />
+                ) : null}
+                <span>{nameError}</span>
+              </Typography>
+              <TextField
+                sx={{ minWidth: "18vw" }}
+                // fullWidth
+                required
+                label="Email"
+                id="outlined-email-required"
+                type="text"
+                onChange={handleEmail}
+                onBlur={emailExists}
               />
-            ) : null}
-            <span>{nameError}</span>
-          </Typography>
-          <TextField
-            margin="normal"
-            fullWidth
-            required
-            label="Email"
-            id="outlined-email-required"
-            type="text"
-            onChange={handleEmail}
-          />
-          <Typography
-            sx={{
-              width: "100%",
-              backgroundColor: "rgba(235, 66, 66, 0.2)",
-              color: "rgb(235, 66, 66)",
-              borderRadius: "5px",
-              paddingLeft: "3px",
-            }}
-            variant="h6"
-          >
-            {emailError ? (
-              <ErrorIcon
+              <Typography
                 sx={{
-                  marginRight: "0.5rem",
-                  position: "relative",
-                  top: "0.25rem",
+                  minWidth: "18vw",
+                  backgroundColor: "rgba(235, 66, 66, 0.2)",
+                  color: "rgb(235, 66, 66)",
+                  borderRadius: "5px",
+                  paddingLeft: "3px",
+                  margin: "8px 0",
                 }}
+                variant="h6"
+              >
+                {emailError ? (
+                  <ErrorIcon
+                    sx={{
+                      marginRight: "0.5rem",
+                      position: "relative",
+                      top: "0.25rem",
+                    }}
+                  />
+                ) : null}
+                {emailError}
+              </Typography>
+              <TextField
+                sx={{ minWidth: "18vw" }}
+                // fullWidth
+                required
+                id="outlined-password-input"
+                label="Password"
+                type={passwordShown ? "text" : "password"}
+                onChange={handlePassword}
               />
-            ) : null}
-            {emailError}
-          </Typography>
-          <TextField
-            fullWidth
-            margin="normal"
-            required
-            id="outlined-password-input"
-            label="Password"
-            type={passwordShown ? "text" : "password"}
-            onChange={handlePassword}
-          />
-          <IconButton
-            onClick={togglePassword}
-            sx={{
-              position: "absolute",
-              marginLeft: "-45px",
-              marginTop: "25px",
-            }}
-          >
-            {passwordShown ? <Visibility /> : <VisibilityOff />}
-          </IconButton>
-          <Typography
-            sx={{
-              width: "100%",
-              backgroundColor: "rgba(235, 66, 66, 0.2)",
-              marginBottom: "5px",
-              color: "rgb(235, 66, 66)",
-              borderRadius: "5px",
-              paddingLeft: "3px",
-            }}
-            variant="h6"
-          >
-            {passwordError ? (
-              <ErrorIcon
+              <IconButton
+                onClick={togglePassword}
                 sx={{
-                  marginRight: "0.5rem",
-                  position: "relative",
-                  top: "0.25rem",
+                  position: "absolute",
+                  marginLeft: "-45px",
+                  marginTop: "8px",
                 }}
+              >
+                {passwordShown ? <Visibility /> : <VisibilityOff />}
+              </IconButton>
+              <Typography
+                sx={{
+                  minWidth: "18vw",
+                  backgroundColor: "rgba(235, 66, 66, 0.2)",
+                  color: "rgb(235, 66, 66)",
+                  borderRadius: "5px",
+                  paddingLeft: "3px",
+                  margin: "8px 0",
+                }}
+                variant="h6"
+              >
+                {passwordError ? (
+                  <ErrorIcon
+                    sx={{
+                      marginRight: "0.5rem",
+                      position: "relative",
+                      top: "0.25rem",
+                    }}
+                  />
+                ) : null}
+                {passwordError} {/*at first its empty*/}
+              </Typography>
+            </div>
+
+            {/*  */}
+
+            <div>
+              <TextField
+                sx={{ minWidth: "18vw", display: "block", margin: "8px 0" }}
+                required
+                label="Street"
+                id="outlined-street-required"
+                type="text"
               />
-            ) : null}
-            {passwordError} {/*at first its empty*/}
-          </Typography>
+              <TextField
+                sx={{ minWidth: "18vw", display: "block", margin: "8px 0" }}
+                required
+                label="City"
+                id="outlined-city-required"
+                type="text"
+              />
+
+              <TextField
+                sx={{ minWidth: "18vw", display: "block", margin: "8px 0"}}
+                required
+                id="outlined-zipcode-input"
+                label="Zip Code"
+                type="text"
+              />
+            </div>
+            
+          </div>
+          <FormControl size='small'  sx={{maxWidth: "50%", display: "block", margin: "auto"  }}>
+                <InputLabel>Country</InputLabel>
+                <Select
+                sx={{minWidth: "18vw", display: "block", margin: "8px 0"}}
+                  required
+                  value={item === null ? "" : item}
+                  label="Country"
+                  onChange={(e) => setItem(e.target.value)}
+                  MenuProps={{ PaperProps: { sx: { maxHeight: 200 } } }}
+                >
+                  {list.map((item) => (
+                    <MenuItem sx={{ minWidth: "12vw" }} key={item} value={item}>
+                      {item}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
           <div style={{ textAlign: "center" }}>
             <input
               type="checkbox"

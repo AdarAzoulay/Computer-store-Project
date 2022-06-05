@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   });
 
 
-const SpesificComputerListPage = ({ value, setValue }) => {
+const SpesificComputerListPage = ({ setValue }) => {
 
     let { name } = useParams();
     const classes = useStyles();
@@ -58,7 +58,7 @@ const SpesificComputerListPage = ({ value, setValue }) => {
 
   return (
     <>
-   <ComputerNavBar value={value} setValue={setValue}/>
+   <ComputerNavBar setValue={setValue}/>
     <div className={classes.container}>
       <Grid container spacing={4}>
         {displayCards}

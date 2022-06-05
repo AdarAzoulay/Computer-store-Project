@@ -29,10 +29,6 @@ const EmptyCart = ({user}) => {
         <Typography variant="h6">Hi, {user.name.split(" ")[0]} - fill it up with savings from your usual departments. </Typography>
         <div>
         <Button onClick={()=> navigate("/ComputerListPage/All")} variant="outlined">Computers</Button>
-        {/* <Button onClick={()=> navigate("/ComputerListPage/All")} variant="outlined">Laptops</Button>
-        <Button onClick={()=> navigate("/ComputerListPage/All")} variant="outlined">Laptops</Button>
-        <Button onClick={()=> navigate("/ComputerListPage/All")} variant="outlined">Laptops</Button> */}
-
         </div>
 
       

@@ -48,7 +48,7 @@ body {
   display: flex;
   justify-content: space-around;
   margin-top: 5vh;
-  height: 63vh;
+  min-height: 63vh;
 }
 
 .css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected {  /* ComputerNavBar */
@@ -159,7 +159,14 @@ a:hover {
   padding: 0 !important;
 }
 
-/* input:-webkit-autofill {
-  background-color: transparent !important;
-  -webkit-box-shadow: 0 0 0 50px #f0f0f0 inset;
-} */
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;               
+  background-color:rgb(185, 185, 185, 0.5);
+  height: 1px;
+}
+
+
+

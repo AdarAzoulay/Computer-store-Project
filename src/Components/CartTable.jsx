@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Table,
   TableContainer,
@@ -12,11 +12,13 @@ import Paper from "@mui/material/Paper";
 import ClearIcon from "@mui/icons-material/Clear";
 import { makeStyles } from "@mui/styles";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../App";
+
 
 const useStyles = makeStyles({
   container: {
-    padding: "1.5rem",
-    width: "100%",
+    padding: "1.5rem 1.5rem 0 1.5rem",
+    // width: "60vw"
   },
   flex: {
     display: "flex",
@@ -24,10 +26,12 @@ const useStyles = makeStyles({
   },
 });
 
-const CartTable = ({ user, setUserCart, setItemsInCart, setTotalPrice }) => {
+const CartTable = ({ setItemsInCart, setTotalPrice }) => {
   const classes = useStyles();
   const navigate = useNavigate();
   const userID = localStorage.getItem("currentUser");
+  const { user, setUserCart } = useContext(UserContext);
+
 
   const changedAmount = (e, title) => {
     let itemCount = 0;
@@ -68,7 +72,7 @@ const CartTable = ({ user, setUserCart, setItemsInCart, setTotalPrice }) => {
   return (
     <div className={classes.container}>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: "55vw" }} aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Product</TableCell>
@@ -82,10 +86,12 @@ const CartTable = ({ user, setUserCart, setItemsInCart, setTotalPrice }) => {
                 key={item.item}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell  className={classes.flex} component="th" scope="row">
+                <TableCell className={classes.flex} component="th" scope="row">
                   {
                     <img
-                    onClick={()=>navigate("/ComputerListPage/All/" + item.id)}
+                      onClick={() =>
+                        navigate("/ComputerListPage/All/" + item.id)
+                      }
                       src={item.img}
                       alt={item.name}
                       width={100}
@@ -94,7 +100,6 @@ const CartTable = ({ user, setUserCart, setItemsInCart, setTotalPrice }) => {
                     />
                   }
                   {item.item}
-                  
                 </TableCell>
                 <TableCell align="right">
                   <select
@@ -109,7 +114,9 @@ const CartTable = ({ user, setUserCart, setItemsInCart, setTotalPrice }) => {
                     <option value="4">4</option>
                   </select>
                 </TableCell>
-                <TableCell align="right">{item.amount} X {item.price} = {item.amount*item.price}</TableCell>
+                <TableCell align="right">
+                  {item.amount} X {item.price} = {item.amount * item.price}
+                </TableCell>
                 <TableCell align="right">
                   <IconButton onClick={() => deleteFromCart(item.item)}>
                     <ClearIcon />

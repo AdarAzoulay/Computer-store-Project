@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 import ErrorIcon from "@mui/icons-material/Error";
 import { UserContext } from "../App";
@@ -53,25 +53,20 @@ const useStyles = makeStyles({
 const LogIn = () => {
   const classes = useStyles();
   const navigate = useNavigate();
-  const [users, setUsers] = useState([]);
   const [loginError, setLoginError] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [pass, setPass] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
   const { user, setUser } = useContext(UserContext);
 
-  useEffect(() => {
-    fetch("http://localhost:8001/users")
-      .then((res) => res.json())
-      .then((data) => {
-        setUsers(data);
-      });
-  }, []);
 
   const handleClick = (e) => {
     e.preventDefault();
-
-    users.forEach((user) => {
+    fetch("http://localhost:8001/users")
+      .then((res) => res.json())
+      .then((data) => {
+    data.forEach((user) => {
       if (
         user.email === e.target[0].value.trim() &&
         user.password === e.target[2].value
@@ -82,10 +77,11 @@ const LogIn = () => {
         navigate("/");
       }
     });
-    if (users.some((user) => user.email === e.target[0].value.trim()))
+    if (data.some((user) => user.email === e.target[0].value.trim()))
       setLoginError("Incorrect username or password.");
     else setLoginError("Email is not found.");
-  };
+});
+  }
 
   const handleEmail = (e) => {
     const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
@@ -97,8 +93,9 @@ const LogIn = () => {
   };
 
   const handlePassword = (e) => {
+    setPass(e.target.value);
     const pattern = /^[a-zA-Z\d]{8,}$/;
-      if (!pattern.test(e.target.value)) {
+    if (!pattern.test(e.target.value)) {
       setPasswordError("Minimum 8 characters");
     } else {
       setPasswordError("");
@@ -149,13 +146,12 @@ const LogIn = () => {
           </Typography>
           <TextField
             margin="normal"
-            autoFocus={true}
             fullWidth
             required
             label="Email"
             id="outlined-email-required"
             type="text"
-            onChange={handleEmail}
+            onBlur={handleEmail}
           />
           <Typography
             sx={{
@@ -185,18 +181,20 @@ const LogIn = () => {
             id="outlined-password-input"
             label="Password"
             type={passwordShown ? "text" : "password"}
-            onChange={handlePassword}
+            onBlur={handlePassword}
           />
-          <IconButton
-            onClick={togglePassword}
-            sx={{
-              position: "absolute",
-              marginLeft: "-45px",
-              marginTop: "25px",
-            }}
-          >
-            {passwordShown ? <Visibility /> : <VisibilityOff />}
-          </IconButton>
+          {pass ? (
+            <IconButton
+              onClick={togglePassword}
+              sx={{
+                position: "absolute",
+                marginLeft: "-45px",
+                marginTop: "25px",
+              }}
+            >
+              {passwordShown ? <Visibility /> : <VisibilityOff />}
+            </IconButton>
+          ) : null}
           <Typography
             sx={{
               width: "100%",
@@ -221,9 +219,7 @@ const LogIn = () => {
           </Typography>
           <div className={classes.flex}>
             <div>
-              <input
-                type="checkbox"
-              />
+              <input type="checkbox" />
               <Typography
                 sx={{ display: "inline-block", marginLeft: "0.2rem" }}
               >

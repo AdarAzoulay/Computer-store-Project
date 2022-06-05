@@ -35,20 +35,23 @@ function App() {
       setUser(prev => {return {...prev,cart} })
     }
 
+    const setUserAddress = (address) => {
+      setUser(prev => {return {...prev,address} })
+    }
+
   useEffect(() => {
     setIsLoading(true)
     let currentUser = localStorage.getItem("currentUser")
     if(currentUser !== null) {
-      fetch("http://localhost:8001/users")
+      fetch("http://localhost:8001/users/" + currentUser)
         .then((res) => res.json())
-        .then((data) => data.forEach(user => {
-          if(user.id === parseInt(currentUser) ){
-            delete user.password
-            setUser(user)
+        .then((data) =>  {
+          if(data.id === parseInt(currentUser) ){
+            delete data.password
+            setUser(data)
             setIsLoading(false)
-            console.log(user)
           }
-        }));
+        });
       }else
          setIsLoading(false)
   }, []);
@@ -60,18 +63,18 @@ function App() {
       <StyledEngineProvider injectFirst>
         <ThemeProvider theme={theme}>
           <BrowserRouter>
-          <UserContext.Provider value={{user: user, setUser:setUser, setUserCart:setUserCart}}>
+          <UserContext.Provider value={{user: user, setUser:setUser, setUserCart:setUserCart , setUserAddress:setUserAddress}}>
               <Layout>
                 <Routes>
                   <Route path="/LogIn" element={<LogIn/>} />
                   <Route path="/SignUp" element={<SignUp/>} />
-                  <Route path="/Cart" element={ <RequireAuth><Cart/> </RequireAuth>}/>
+                  <Route path="/Cart" element={ <RequireAuth><Cart /> </RequireAuth>}/>
                   <Route path="/" element={<RequireAuth><Homepage /></RequireAuth>} />
                   <Route path="/User/:userID" element={<RequireAuth><Profile/></RequireAuth>} />
                   <Route path="/User/:userID/Orders" element={<RequireAuth><ProfileOrders/></RequireAuth>} />
-                  <Route path="/ComputerListPage/All" element={<RequireAuth> <ComputerListPage value={value} setValue={setValue}/></RequireAuth>} />
+                  <Route path="/ComputerListPage/All" element={<RequireAuth> <ComputerListPage setValue={setValue}/></RequireAuth>} />
                   <Route path="/ComputerListPage/All/:id" element={<RequireAuth> <DescriptionPage/></RequireAuth>} />
-                  <Route path='/ComputerListPage/:name' element={<RequireAuth> <SpesificComputerListPage value={value} setValue={setValue}/></RequireAuth>} />
+                  <Route path='/ComputerListPage/:name' element={<RequireAuth> <SpesificComputerListPage  setValue={setValue}/></RequireAuth>} />
                   <Route path="/CreateList" element={<RequireAuth isAdminRequired={isAdminRequired}> <CreateList isAdminRequired={isAdminRequired} />  </RequireAuth>} />
                   <Route path="/EditList" element={<RequireAuth isAdminRequired={isAdminRequired}><EditList isAdminRequired={isAdminRequired} /></RequireAuth>} />
                   <Route path="/OrderManagment" element={<RequireAuth isAdminRequired={isAdminRequired}><OrderManagement/></RequireAuth>} />

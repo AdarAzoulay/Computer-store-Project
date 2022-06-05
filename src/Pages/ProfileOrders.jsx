@@ -5,8 +5,9 @@ import { UserContext } from "../App";
 const columns = [
   { field: "id", headerName: "Order ID", width: 90 },
   { field: "name", headerName: "Name", width: 180 },
-  { field: "orders", headerName: "Order", width: 650 },
+  { field: "orders", headerName: "Order", width: 580 },
   { field: "price", headerName: "Price", width: 70 },
+  { field: "address", headerName: "Delivery Address", width: 230 },
   { field: "date", headerName: "Date", width: 250 },
 ];
 
@@ -25,6 +26,7 @@ const ProfileOrders = () => {
 
   const rows = orders.map((t) => {
     let ordersTitle = "";
+    let orderDeliveryAddress =`${t.address.street} , ${t.address.city}\n${t.address.country} ${t.address.zipCode}`;
     let count = 1;
     t.itemOrdered.forEach((element) => {
       ordersTitle += `${count}. ${element.itemTitle} -   x${element.amount}\n`;
@@ -36,6 +38,7 @@ const ProfileOrders = () => {
       orders: ordersTitle,
       price: t.totalPrice,
       date: t.purchaseDate,
+      address: orderDeliveryAddress
     };
   });
   return (

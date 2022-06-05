@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   },
 });
 
-const ComputerListPage = ({ value, setValue }) => {
+const ComputerListPage = ({  setValue }) => {
  
   const [computerModels, setComputerModels] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
@@ -52,7 +52,7 @@ const ComputerListPage = ({ value, setValue }) => {
 
   return (
     <>
-      <ComputerNavBar value={value} setValue={setValue} />
+      <ComputerNavBar setValue={setValue} />
       <div className={classes.container}>
         <Grid container spacing={4}>
           {displayCards}

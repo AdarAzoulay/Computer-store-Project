@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
@@ -132,9 +131,20 @@ const Row = ({
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
-              <Typography variant="h6" gutterBottom component="div">
-                Items ordered
+              <div style={{display:"flex", justifyContent: "space-between"}}>
+            <Typography variant="h6" gutterBottom component="div">
+                Items ordered:
               </Typography>
+              <div>
+              <Typography variant="h6" gutterBottom component="div">
+              Delivery Address:
+              </Typography>
+              <Typography variant="subtitle1" gutterBottom component="div">
+                {row.address.street} , {row.address.city}<br/>{row.address.country} {row.address.zipCode}
+              </Typography>
+              </div>
+
+              </div>
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
@@ -184,7 +194,7 @@ const Row = ({
 const OrderManagement = () => {
   const [orders, setOrders] = useState([]);
   const [page, setPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(6);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
   const [spesificOrdersArray, setSpesificOrdersArray] = useState([]);
   const [filterObj, setFilterObj] = useState({
     id: "",
@@ -214,6 +224,7 @@ const OrderManagement = () => {
               totalPrice: item.totalPrice,
               purchaseDate: item.purchaseDate,
               itemOrdered: item.itemOrdered,
+              address : item.address
             };
           });
           setOrders(insertRows);
@@ -268,6 +279,7 @@ const OrderManagement = () => {
                 totalPrice: item.totalPrice,
                 purchaseDate: item.purchaseDate,
                 itemOrdered: item.itemOrdered,
+                address : item.address
               };
             });
           setOrders(insertRows);
@@ -393,7 +405,7 @@ const OrderManagement = () => {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[2, 5, 10]}
+        rowsPerPageOptions={[2, 4, 5]}
         component="div"
         count={orders.length}
         rowsPerPage={rowsPerPage}

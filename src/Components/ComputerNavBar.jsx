@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   }
 });
 
-const ComputerNavBar = ({ value, setValue }) => {
+const ComputerNavBar = ({  setValue }) => {
   const navigate = useNavigate();
   const classes = useStyles();
 

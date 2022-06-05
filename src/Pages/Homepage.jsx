@@ -2,19 +2,13 @@ import { Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
-// import TextField from "@mui/material/TextField";
-// import Stack from "@mui/material/Stack";
-// import Autocomplete from "@mui/material/Autocomplete";
 import CardHomepage from "../Components/CardHomepage";
-// import SearchIcon from "@mui/icons-material/Search";
 
 const useStyles = makeStyles({
   fullScreen: {
     maxWidth: "96%",
-    // height: "100%",
     display: "flex",
     justifyContent: "center",
-    // alignItems: "center",
     marginTop: "3.5vh"
   },
   flexCol: {
@@ -58,8 +52,8 @@ const Homepage = () => {
     fetch("http://localhost:8000/computerModels")
       .then((res) => res.json())
       .then((data) => {
-          let a = [data[0], data[5], data[15]]
-          setComputerModels(a)
+          let homePage3Models = [data[0], data[5], data[15]]
+          setComputerModels(homePage3Models)
           
       })
   }, []);

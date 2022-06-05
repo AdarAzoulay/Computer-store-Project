@@ -38,7 +38,7 @@ export const SearchBar = () => {
 
   return (
     <Autocomplete
-      sx={{ margin: "1em", width: "400px" }}
+      sx={{ margin: "1em", width: "20vw" }}
       // noOptionsText={"No options"}
       freeSolo 
       popupIcon={null}
