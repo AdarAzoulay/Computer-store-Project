@@ -21,9 +21,9 @@ const useStyles = makeStyles({
   },
   flexColImg: {
     display: "flex",
-    flexDirection: "column",
     flexBasis: "23%",
     flexWrap: "wrap",
+    marginTop: "2vh"
   },
   flexRow: {
     display: "flex",
@@ -33,14 +33,11 @@ const useStyles = makeStyles({
     justifyContent: "center"
   },
 
-  img1: {
+  img: {
     width: "100%",
-    mineight: "28vh",
+    // minHeight: "12vh",
   },
-  img2: {
-    width: "100%",
-    height: "21vh",
-  },
+
 });
 
 const Homepage = () => {
@@ -89,16 +86,16 @@ const Homepage = () => {
         </div>
       </div>
       <div className={classes.flexColImg}>
-        <img className={classes.img1} src="/ComputersHome/Computers1.png" alt="Computers1"></img>
-        <img className={classes.img2} src="/ComputersHome/Computers5.png" alt="Computers5"></img>
-        <img className={classes.img1} src="/ComputersHome/Computers3.png" alt="Computers3"></img>
-        <img className={classes.img2} src="/ComputersHome/Computers4.png" alt="Computers4"></img>
+        <img className={classes.img} src="/ComputersHome/Computers1.png" alt="Computers1"></img>
+        <img className={classes.img} src="/ComputersHome/Computers5.png" alt="Computers5"></img>
+        <img className={classes.img} src="/ComputersHome/Computers3.png" alt="Computers3"></img>
+        <img className={classes.img} src="/ComputersHome/Computers4.png" alt="Computers4"></img>
       </div>
       <div className={classes.flexColImg}>
-        <img className={classes.img2} src="/ComputersHome/Computers7.png" alt="Computers7"></img>
-        <img className={classes.img1} src="/ComputersHome/Computers6.png" alt="Computers6"></img>
-        <img className={classes.img2} src="/ComputersHome/Computers2.png" alt="Computers2"></img>
-        <img className={classes.img1} src="/ComputersHome/Computers8.png" alt="Computers8"></img>
+        <img className={classes.img} src="/ComputersHome/Computers7.png" alt="Computers7"></img>
+        <img className={classes.img} src="/ComputersHome/Computers6.png" alt="Computers6"></img>
+        <img className={classes.img} src="/ComputersHome/Computers2.png" alt="Computers2"></img>
+        <img className={classes.img} src="/ComputersHome/Computers8.png" alt="Computers8"></img>
       </div>
     </div>
     </>
